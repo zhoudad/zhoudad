@@ -88,21 +88,21 @@
 
 
 
-  <meta name="description" content="title: Vue 的使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someObjec">
+  <meta name="description" content="title: Vue $set使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someOb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="周大大">
 <meta property="og:url" content="http://yoursite.com/2019/07/12/Vue的set的使用/index.html">
 <meta property="og:site_name" content="周大大">
-<meta property="og:description" content="title: Vue 的使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someObjec">
+<meta property="og:description" content="title: Vue $set使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someOb">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/07/12/Vue的set的使用/..%5Cimages%5CSnipaste_2019-07-10_16-13-07.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/12/Vue的set的使用/..%5Cimages%5CSnipaste_2019-07-10_16-14-11.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/12/Vue的set的使用/..%5Cimages%5CSnipaste_2019-07-10_16-14-35.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/12/Vue的set的使用/..%5Cimages%5CSnipaste_2019-07-10_16-20-11.png">
-<meta property="og:updated_time" content="2019-07-12T08:07:31.283Z">
+<meta property="og:updated_time" content="2019-07-12T08:33:59.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="周大大">
-<meta name="twitter:description" content="title: Vue 的使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someObjec">
+<meta name="twitter:description" content="title: Vue $set使用date: 2019-07-12 09:06:09tags: Vuecategories: Web Vue $set的使用对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。 1234567//单个属性Vue.set(vm.someOb">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/12/Vue的set的使用/..%5Cimages%5CSnipaste_2019-07-10_16-13-07.png">
 
 
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 09:06:09 / 修改时间：16:07:31" itemprop="dateCreated datePublished" datetime="2019-07-12T09:06:09+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 09:06:09 / 修改时间：16:33:59" itemprop="dateCreated datePublished" datetime="2019-07-12T09:06:09+08:00">2019-07-12</time>
             
 
             
@@ -419,7 +419,7 @@
       
 
       
-        <p>title: Vue 的使用<br>date: 2019-07-12 09:06:09<br>tags: Vue<br>categories: Web</p>
+        <p>title: Vue $set使用<br>date: 2019-07-12 09:06:09<br>tags: Vue<br>categories: Web</p>
 <h3 id="Vue-set的使用"><a href="#Vue-set的使用" class="headerlink" title="Vue $set的使用"></a>Vue $set的使用</h3><p>对于已经创建的实例，<strong>Vue</strong> 不允许动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, propertyName, value)</code> 方法向嵌套对象添加响应式属性。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单个属性</span></span><br><span class="line">Vue.set(vm.someObject, <span class="string">'b'</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">//多个属性</span></span><br><span class="line">vm.userProfile = <span class="built_in">Object</span>.assign(&#123;&#125;, vm.userProfile, &#123;</span><br><span class="line">  age: <span class="number">27</span>,</span><br><span class="line">  favoriteColor: <span class="string">'Vue Green'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -543,7 +543,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
