@@ -97,9 +97,9 @@
 <meta property="og:description" content="Passive event listeners – three.js在使用onwheel事件的时候控制台报错，并且抛出：Unable to preventDefault inside passive event listener invocation  解决办法： 在three源文件中找到wheel事件  修改前   修改后  passive：设置为true时，表示 listener 永远不会调用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/07/12/images/Snipaste_2019-07-08_09-45-07.png">
-<meta property="og:image" content="http://yoursite.com/.com//images%5CSnipaste_2019-07-08_09-47-15.png">
-<meta property="og:image" content="http://yoursite.com/.com//..%5Cimages%5CSnipaste_2019-07-08_09-48-09.png">
-<meta property="og:updated_time" content="2019-07-12T09:10:15.536Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/12/images/Snipaste_2019-07-08_09-47-15.png">
+<meta property="og:image" content="http://yoursite.com/2019/07/12/images/Snipaste_2019-07-08_09-48-09.png">
+<meta property="og:updated_time" content="2019-07-12T09:51:31.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Passive event listeners -- three.js">
 <meta name="twitter:description" content="Passive event listeners – three.js在使用onwheel事件的时候控制台报错，并且抛出：Unable to preventDefault inside passive event listener invocation  解决办法： 在three源文件中找到wheel事件  修改前   修改后  passive：设置为true时，表示 listener 永远不会调用">
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 09:05:53 / 修改时间：17:10:15" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:53+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 09:05:53 / 修改时间：17:51:31" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:53+08:00">2019-07-12</time>
             
 
             
@@ -442,9 +442,9 @@
 <p>解决办法：</p>
 <p>在three源文件中找到wheel事件</p>
 <p> 修改前</p>
-<p><img src="/.com//images%5CSnipaste_2019-07-08_09-47-15.png" alt></p>
+<p><img src="../images/Snipaste_2019-07-08_09-47-15.png" alt></p>
 <p> 修改后</p>
-<p><img src="/.com//..%5Cimages%5CSnipaste_2019-07-08_09-48-09.png" alt></p>
+<p><img src="../images/Snipaste_2019-07-08_09-48-09.png" alt></p>
 <p>passive：设置为<code>true</code>时，表示 <code>listener</code> 永远不会调用 <code>preventDefault()。如果 listener 仍然调用了这个函数，客户端将会忽略它并抛出一个控制台警告。</code></p>
 <p>从Chrome 56开始，如果我们给<code>document</code>绑定<code>touchmove</code>或者<code>touchstart</code>事件的监听器，这个<code>passive</code>是会被默认设置为<code>true</code>以提高性能，具体<a href="https://link.juejin.im?target=https%3A%2F%2Fwww.chromestatus.com%2Ffeature%2F5093566007214080" target="_blank" rel="noopener">chromestatue 文档</a>。但是我们大多数人并不知道这点，并且依旧调用了<code>preventDefault</code>。这并不会导致什么页面崩溃级的错误，但是这可能导致我们忽略了一个页面性能优化的点，特别是在移动端这种更加重视性能优化的场景下。</p>
 <p>参考链接：<a href="https://juejin.im/post/5ad804c1f265da504547fe68" target="_blank" rel="noopener">https://juejin.im/post/5ad804c1f265da504547fe68</a></p>
