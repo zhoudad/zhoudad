@@ -88,15 +88,18 @@
 
 
 
-  <meta name="keywords" content="Vue">
+  <meta name="description" content="Ant Design of Vue自定义svg图标官网中说明需要安装vue-svg-loade 123npm i -D vue-svg-loaderyarn add --dev vue-svg-loader  vue-config.js 1234567891011module.exports = &amp;#123;  chainWebpack: (config) =&amp;gt; &amp;#123;    cons">
+<meta name="keywords" content="Antd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue">
-<meta property="og:url" content="http://yoursite.com/2019/06/12/Vue/index.html">
+<meta property="og:title" content="Antd封装Svg图标组件">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/Ant Design of Vue自定义svg图标/index.html">
 <meta property="og:site_name" content="周大大">
+<meta property="og:description" content="Ant Design of Vue自定义svg图标官网中说明需要安装vue-svg-loade 123npm i -D vue-svg-loaderyarn add --dev vue-svg-loader  vue-config.js 1234567891011module.exports = &amp;#123;  chainWebpack: (config) =&amp;gt; &amp;#123;    cons">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T01:24:10.905Z">
+<meta property="og:updated_time" content="2019-07-12T01:20:37.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue">
+<meta name="twitter:title" content="Antd封装Svg图标组件">
+<meta name="twitter:description" content="Ant Design of Vue自定义svg图标官网中说明需要安装vue-svg-loade 123npm i -D vue-svg-loaderyarn add --dev vue-svg-loader  vue-config.js 1234567891011module.exports = &amp;#123;  chainWebpack: (config) =&amp;gt; &amp;#123;    cons">
 
 
 
@@ -104,7 +107,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/12/Vue/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/Ant Design of Vue自定义svg图标/">
 
 
 
@@ -114,7 +117,7 @@
   };
 </script>
 
-  <title>Vue | 周大大</title>
+  <title>Antd封装Svg图标组件 | 周大大</title>
   
 
 
@@ -330,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Vue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Ant Design of Vue自定义svg图标/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -347,7 +350,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue
+          <h1 class="post-title" itemprop="name headline">Antd封装Svg图标组件
 
               
             
@@ -373,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:22:32 / 修改时间：09:24:10" itemprop="dateCreated datePublished" datetime="2019-06-12T09:22:32+08:00">2019-06-12</time>
+              <time title="创建时间：2019-07-12 09:04:34 / 修改时间：09:20:37" itemprop="dateCreated datePublished" datetime="2019-07-12T09:04:34+08:00">2019-07-12</time>
             
 
             
@@ -430,7 +433,22 @@
       
 
       
-        
+        <h2 id="Ant-Design-of-Vue自定义svg图标"><a href="#Ant-Design-of-Vue自定义svg图标" class="headerlink" title="Ant Design of Vue自定义svg图标"></a>Ant Design of Vue自定义svg图标</h2><p>官网中说明需要安装<em>vue-svg-loade</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i -D vue-svg-loader</span><br><span class="line"></span><br><span class="line">yarn add --dev vue-svg-loader</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue-config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  chainWebpack: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> svgRule = config.module.rule(<span class="string">'svg'</span>);</span><br><span class="line"></span><br><span class="line">    svgRule.uses.clear();</span><br><span class="line"></span><br><span class="line">    svgRule</span><br><span class="line">      .use(<span class="string">'vue-svg-loader'</span>)</span><br><span class="line">      .loader(<span class="string">'vue-svg-loader'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>接下来新建一个组件SvgIcon.vue</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;a-icon :component=<span class="string">"this.svg"</span> :style=<span class="string">"&#123;fontSize:'40px',lineHeight:'65px',marginLeft:'-10px'&#125;"</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  props: ["svg"],</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  name: "client"</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to limit CSS to <span class="keyword">this</span> component only --&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped lang=<span class="string">"scss"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在需要调用的组件中引入svg格式的图标和SvgIcon.vue组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> svgIcon <span class="keyword">from</span> <span class="string">"./svg/SvgIcon"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> client <span class="keyword">from</span> <span class="string">"../assets/sl/kehuguanli.svg"</span>;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">components: &#123;</span><br><span class="line">    svgIcon</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><strong>并且在组建内使用</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg-icon :svg=<span class="string">"this.svg"</span>&gt;&lt;/svg-icon&gt;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -456,7 +474,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
+            <a href="/tags/Antd/" rel="tag"># Antd</a>
           
         </div>
       
@@ -469,14 +487,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/12/SSR/" rel="next" title="SSR">
+                <i class="fa fa-chevron-left"></i> SSR
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/12/SSR/" rel="prev" title="SSR">
-                SSR <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/12/Axios-封装/" rel="prev" title="Axios 封装">
+                Axios 封装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -640,6 +671,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ant-Design-of-Vue自定义svg图标"><span class="nav-number">1.</span> <span class="nav-text">Ant Design of Vue自定义svg图标</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

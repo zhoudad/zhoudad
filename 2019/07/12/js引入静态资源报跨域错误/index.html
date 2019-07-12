@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="js引入静态资源报跨域错误  加载js文件时使用了file协议，该协议会导致跨域，而使用htpp、https等协议时则没有跨域问题。  在import的过程中需要http服务器去解析es6语法并添加header头信息去跨域引入TrackballControls.js，但是file协议相当于通过资源管理器静态访问demo.html，中间的过程没有http服务器参与解析，所以无法识别es6的impor">
+<meta name="keywords" content="Js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js引入静态资源报跨域错误">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/js引入静态资源报跨域错误/index.html">
+<meta property="og:site_name" content="周大大">
+<meta property="og:description" content="js引入静态资源报跨域错误  加载js文件时使用了file协议，该协议会导致跨域，而使用htpp、https等协议时则没有跨域问题。  在import的过程中需要http服务器去解析es6语法并添加header头信息去跨域引入TrackballControls.js，但是file协议相当于通过资源管理器静态访问demo.html，中间的过程没有http服务器参与解析，所以无法识别es6的impor">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-27.png">
+<meta property="og:image" content="c:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-44.png">
+<meta property="og:image" content="c:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-39-26.png">
+<meta property="og:updated_time" content="2019-07-12T05:01:19.100Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js引入静态资源报跨域错误">
+<meta name="twitter:description" content="js引入静态资源报跨域错误  加载js文件时使用了file协议，该协议会导致跨域，而使用htpp、https等协议时则没有跨域问题。  在import的过程中需要http服务器去解析es6语法并添加header头信息去跨域引入TrackballControls.js，但是file协议相当于通过资源管理器静态访问demo.html，中间的过程没有http服务器参与解析，所以无法识别es6的impor">
+<meta name="twitter:image" content="c:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-27.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/js引入静态资源报跨域错误/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>js引入静态资源报跨域错误 | 周大大</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">周大大</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/js引入静态资源报跨域错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js引入静态资源报跨域错误
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:05:23 / 修改时间：13:01:19" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:23+08:00">2019-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="js引入静态资源报跨域错误"><a href="#js引入静态资源报跨域错误" class="headerlink" title="js引入静态资源报跨域错误"></a>js引入静态资源报跨域错误</h3><p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-27.png" alt></p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-44.png" alt></p>
+<p>加载js文件时使用了file协议，该协议会导致跨域，而使用htpp、https等协议时则没有跨域问题。</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-39-26.png" alt></p>
+<p>在<code>import</code>的过程中<strong>需要http服务器去解析es6语法并添加header头信息去跨域引入TrackballControls.js</strong>，但是file协议相当于通过资源管理器静态访问demo.html，<strong>中间的过程没有http服务器参与解析，所以无法识别es6的import语法</strong>。</p>
+<p>当然，也可以搭建lo本地服务器，这样也是可以的</p>
+<p>完整代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> * <span class="keyword">as</span> THREE <span class="keyword">from</span> <span class="string">'https://threejs.org/build/three.module.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Stats <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/libs/stats.module.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; TrackballControls &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/controls/TrackballControls.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; DragControls &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/controls/DragControls.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> container, stats;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> camera, controls, scene, renderer;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> objects = [];</span></span><br><span class="line"></span><br><span class="line">    init();</span><br><span class="line">    animate();</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        container = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.body.appendChild(container);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="number">70</span>, <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight, <span class="number">1</span>, <span class="number">5000</span>);</span></span><br><span class="line">        camera.position.z = 1000;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        scene = <span class="keyword">new</span> THREE.Scene();</span></span><br><span class="line"><span class="javascript">        scene.background = <span class="keyword">new</span> THREE.Color(<span class="number">0xf0f0f0</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        scene.add(<span class="keyword">new</span> THREE.AmbientLight(<span class="number">0x505050</span>));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> light = <span class="keyword">new</span> THREE.SpotLight(<span class="number">0xffffff</span>, <span class="number">1.5</span>);</span></span><br><span class="line">        light.position.set(0, 500, 2000);</span><br><span class="line"><span class="javascript">        light.angle = <span class="built_in">Math</span>.PI / <span class="number">9</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        light.castShadow = <span class="literal">true</span>;</span></span><br><span class="line">        light.shadow.camera.near = 1000;</span><br><span class="line">        light.shadow.camera.far = 4000;</span><br><span class="line">        light.shadow.mapSize.width = 1024;</span><br><span class="line">        light.shadow.mapSize.height = 1024;</span><br><span class="line"></span><br><span class="line">        scene.add(light);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxBufferGeometry(<span class="number">40</span>, <span class="number">40</span>, <span class="number">40</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Mesh(geometry, <span class="keyword">new</span> THREE.MeshLambertMaterial(&#123; <span class="attr">color</span>: <span class="built_in">Math</span>.random() * <span class="number">0xffffff</span> &#125;));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.position.x = <span class="built_in">Math</span>.random() * <span class="number">1000</span> - <span class="number">500</span>;</span></span><br><span class="line"><span class="javascript">            object.position.y = <span class="built_in">Math</span>.random() * <span class="number">600</span> - <span class="number">300</span>;</span></span><br><span class="line"><span class="javascript">            object.position.z = <span class="built_in">Math</span>.random() * <span class="number">800</span> - <span class="number">400</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.rotation.x = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"><span class="javascript">            object.rotation.y = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"><span class="javascript">            object.rotation.z = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.scale.x = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">            object.scale.y = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">            object.scale.z = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.castShadow = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">            object.receiveShadow = <span class="literal">true</span>;</span></span><br><span class="line"></span><br><span class="line">            scene.add(object);</span><br><span class="line"></span><br><span class="line">            objects.push(object);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer = <span class="keyword">new</span> THREE.WebGLRenderer(&#123; <span class="attr">antialias</span>: <span class="literal">true</span> &#125;);</span></span><br><span class="line"><span class="javascript">        renderer.setPixelRatio(<span class="built_in">window</span>.devicePixelRatio);</span></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer.shadowMap.enabled = <span class="literal">true</span>;</span></span><br><span class="line">        renderer.shadowMap.type = THREE.PCFShadowMap;</span><br><span class="line"></span><br><span class="line">        container.appendChild(renderer.domElement);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        controls = <span class="keyword">new</span> TrackballControls(camera, renderer.domElement);</span></span><br><span class="line">        controls.rotateSpeed = 1.0;</span><br><span class="line">        controls.zoomSpeed = 1.2;</span><br><span class="line">        controls.panSpeed = 0.8;</span><br><span class="line"><span class="javascript">        controls.noZoom = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">        controls.noPan = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">        controls.staticMoving = <span class="literal">true</span>;</span></span><br><span class="line">        controls.dynamicDampingFactor = 0.3;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> dragControls = <span class="keyword">new</span> DragControls(objects, camera, renderer.domElement);</span></span><br><span class="line"><span class="javascript">        dragControls.addEventListener(<span class="string">'dragstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            controls.enabled = <span class="literal">false</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"><span class="javascript">        dragControls.addEventListener(<span class="string">'dragend'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            controls.enabled = <span class="literal">true</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        stats = <span class="keyword">new</span> Stats();</span></span><br><span class="line">        container.appendChild(stats.dom);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, onWindowResize, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">onWindowResize</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        camera.aspect = <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight;</span></span><br><span class="line">        camera.updateProjectionMatrix();</span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line">        requestAnimationFrame(animate);</span><br><span class="line"></span><br><span class="line">        render();</span><br><span class="line">        stats.update();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line">        controls.update();</span><br><span class="line"></span><br><span class="line">        renderer.render(scene, camera);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>知识点：</strong></p>
+<ul>
+<li>file协议只能在本地访问</li>
+<li>本地搭建http服务器开放端口后他人也可以通过http访问到你电脑中的文件，但是file协议做不到</li>
+<li>file协议对应有一个类似http的远程访问，就是ftp协议，即文件传输协议。</li>
+<li>file协议无法实现跨域</li>
+</ul>
+<p><strong>flie协议：file协议主要用于访问本地计算机中的文件</strong></p>
+<p>file协议的基本格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file:///文件路径</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Js/" rel="tag"># Js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/12/Axios-封装/" rel="next" title="Axios 封装">
+                <i class="fa fa-chevron-left"></i> Axios 封装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/12/Passive-event-listeners-three-js/" rel="prev" title="Passive event listeners -- three.js">
+                Passive event listeners -- three.js <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/zhoudad" title="GitHub &rarr; https://github.com/zhoudad" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/iv000000000@qq.com" title="E-Mail &rarr; iv000000000@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js引入静态资源报跨域错误"><span class="nav-number">1.</span> <span class="nav-text">js引入静态资源报跨域错误</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

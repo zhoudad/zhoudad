@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Python/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/原生js添加类名/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -349,7 +349,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/12/Python/" class="post-title-link" itemprop="url">Python</a>
+                <a href="/2019/07/12/原生js添加类名/" class="post-title-link" itemprop="url">原生js添加类名</a>
               
             
           </h1>
@@ -374,167 +374,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:27:09 / 修改时间：09:28:35" itemprop="dateCreated datePublished" datetime="2019-06-12T09:27:09+08:00">2019-06-12</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Serve/" itemprop="url" rel="index"><span itemprop="name">Serve</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="周大大">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/12/Css/" class="post-title-link" itemprop="url">Css</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-12 09:26:38 / 修改时间：09:47:40" itemprop="dateCreated datePublished" datetime="2019-06-12T09:26:38+08:00">2019-06-12</time>
+              <time title="创建时间：2019-07-12 09:08:06 / 修改时间：09:27:10" itemprop="dateCreated datePublished" datetime="2019-07-12T09:08:06+08:00">2019-07-12</time>
             
 
             
@@ -593,7 +433,17 @@
       
         
           
-            
+            <h2 id="原生js添加类名"><a href="#原生js添加类名" class="headerlink" title="原生js添加类名"></a>原生js添加类名</h2><ol>
+<li><strong>使用getAttribute</strong></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> classVal = <span class="built_in">document</span>.getElementById(<span class="string">"id"</span>).getAttribute(<span class="string">"class"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除的话</span></span><br><span class="line">classVal = classVal.replace(<span class="string">"someClassName"</span>,<span class="string">""</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"id"</span>).setAttribute(<span class="string">"class"</span>,classVal );</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加的话</span></span><br><span class="line">classVal = classVal.concat(<span class="string">" someClassName"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"id"</span>).setAttribute(<span class="string">"class"</span>,classVal );</span><br><span class="line"></span><br><span class="line"><span class="comment">//替换的话</span></span><br><span class="line">classVal = classVal.replace(<span class="string">"someClassName"</span>,<span class="string">"otherClassName"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"id"</span>).setAttribute(<span class="string">"class"</span>,classVal );</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>使用classList</strong></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> classVal = <span class="built_in">document</span>.getElementById(<span class="string">"classVal"</span>).classList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加的话</span></span><br><span class="line">classVal.calssList.add(<span class="string">'newclass'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加多个的话</span></span><br><span class="line">classVal.calssList.add(<span class="string">'newclass'</span>,<span class="string">'newclass1'</span>,<span class="string">'newclass2'</span>...)</span><br><span class="line"></span><br><span class="line"><span class="comment">//移除的话</span></span><br><span class="line">classVal.calssList.remove(<span class="string">'newclass'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//移除多个的话</span></span><br><span class="line">classVal.calssList.remove(<span class="string">'newclass'</span>,<span class="string">'newclass1'</span>,<span class="string">'newclass2'</span>...)</span><br><span class="line"></span><br><span class="line"><span class="comment">//检查是否包含某个类</span></span><br><span class="line">classVal.classList.contains(<span class="string">'myCssClass'</span>); <span class="comment">//return true or false</span></span><br></pre></td></tr></table></figure>
+
+
           
         
       
@@ -649,7 +499,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Node-js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Vue组件传值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -669,7 +519,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/12/Node-js/" class="post-title-link" itemprop="url">Node.js</a>
+                <a href="/2019/07/12/Vue组件传值/" class="post-title-link" itemprop="url">Vue组件传值</a>
               
             
           </h1>
@@ -694,7 +544,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:26:22 / 修改时间：09:28:55" itemprop="dateCreated datePublished" datetime="2019-06-12T09:26:22+08:00">2019-06-12</time>
+              <time title="创建时间：2019-07-12 09:07:50 / 修改时间：09:26:40" itemprop="dateCreated datePublished" datetime="2019-07-12T09:07:50+08:00">2019-07-12</time>
             
 
             
@@ -753,7 +603,230 @@
       
         
           
-            
+            <h2 id="Vue组件传值"><a href="#Vue组件传值" class="headerlink" title="Vue组件传值"></a>Vue组件传值</h2><p> <strong>父传子</strong></p>
+<p>   =========================父组件================================</p>
+   <template>
+     <div>
+       父组件:
+       <input type="text" v-model="name">
+       <br>
+       <br>
+       <!-- 引入子组件 -->
+       <child :inputname="name"></child>
+     </div>
+   </template>
+   <script>
+     import child from './child'
+     export default {
+       components: {
+         child
+       },
+       data () {
+         return {
+           name: ''
+         }
+       }
+     }
+   </script>
+
+<p>   =========================子组件================================</p>
+   <template>
+     <div>
+       子组件:
+       <span></span>
+     </div>
+   </template>
+   <script>
+     export default {
+       // 接受父组件的值
+       props: {
+         inputName: String,
+         required: true
+       }
+     }
+   </script>
+---------------------
+
+<p> <strong>子传父</strong></p>
+<p>   =========================子组件================================</p>
+ <template>
+     <div>
+       子组件:
+       <span></span>
+       <!-- 定义一个子组件传值的方法，点击触发 -->
+       <input type="button" value="点击触发" @click="childClick">
+     </div>
+   </template>
+   <script>
+     export default {
+       data () {
+         return {
+           childValue: '我是子组件的数据'
+         }
+       },
+       methods: {
+         childClick () {
+           // childByValue是在父组件on监听的方法
+           // 第二个参数this.childValue是需要传的值
+           this.$emit('childByValue', this.childValue)
+         }
+       }
+     }
+   </script>
+
+<p>=========================父组件================================</p>
+<template>
+  <div>
+    父组件:
+    <span></span>
+    <br>
+    <br>
+    <!-- 引入子组件 定义一个on的方法监听子组件的状态-->
+    <child v-on:childbyvalue="childByValue"></child>
+  </div>
+</template>
+<script>
+  import child from './child'
+  export default {
+    components: {
+      child
+    },
+    data () {
+      return {
+        name: ''
+      }
+    },
+    methods: {
+      childByValue: function (childValue) {
+        // childValue就是子组件传过来的值
+        this.name = childValue
+      }
+    }
+  }
+</script>
+---------------------
+**非父子**
+
+<p>新建一个bus.js文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
+
+<p>组件A</p>
+<template>
+  <div>
+    A组件:
+    <span></span>
+    <input type="button" value="点击触发" @click="elementByValue">
+  </div>
+</template>
+<script>
+  // 引入公共的bug，来做为中间传达的工具
+  import Bus from './bus.js'
+  export default {
+    data () {
+      return {
+        elementValue: 4
+      }
+    },
+    methods: {
+      elementByValue: function () {
+        Bus.$emit('val', this.elementValue)
+      }
+    }
+  }
+</script>
+---------------------
+组件B
+
+<template>
+  <div>
+    B组件:
+    <input type="button" value="点击触发" @click="getData">
+    <span></span>
+  </div>
+</template>
+<script>
+  import Bus from './bus.js'
+  export default {
+    data () {
+      return {
+        name: 0
+      }
+    },
+    mounted: function () {
+      var vm = this
+      // 用$on事件来接收参数
+      Bus.$on('val', (data) => {
+        console.log(data)
+        vm.name = data
+      })
+    },
+    methods: {
+      getData: function () {
+        this.name++
+      }
+    }
+  }
+</script>
+---------------------
+也可以通过main.js的另一种方法
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Bus = <span class="keyword">new</span> Vue</span><br><span class="line"></span><br><span class="line">Vue.prototype.bus = Bus</span><br></pre></td></tr></table></figure>
+
+<p>组件A</p>
+<template>
+  <div>
+    A组件:
+    <span></span>
+    <input type="button" value="点击触发" @click="elementByValue">
+  </div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        elementValue: 4
+      }
+    },
+    methods: {
+      elementByValue: function () {
+        this.bus.$emit('val', this.elementValue)
+      }
+    }
+  }
+</script>
+
+<p>组件B</p>
+<template>
+  <div>
+    B组件:
+    <input type="button" value="点击触发" @click="getData">
+    <span></span>
+  </div>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        name: 0
+      }
+    },
+    mounted: function () {
+      var vm = this
+      // 用$on事件来接收参数
+      this.bus.$on('val', (data) => {
+        console.log(data)
+        vm.name = data
+      })
+    },
+    methods: {
+      getData: function () {
+        this.name++
+      }
+    }
+  }
+</script>
+
+
           
         
       
@@ -809,7 +882,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/React/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/vue双向绑定原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -829,7 +902,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/12/React/" class="post-title-link" itemprop="url">React</a>
+                <a href="/2019/07/12/vue双向绑定原理/" class="post-title-link" itemprop="url">vue双向绑定原理</a>
               
             
           </h1>
@@ -854,7 +927,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:26:05 / 修改时间：09:28:04" itemprop="dateCreated datePublished" datetime="2019-06-12T09:26:05+08:00">2019-06-12</time>
+              <time title="创建时间：2019-07-12 09:06:48 / 修改时间：09:26:06" itemprop="dateCreated datePublished" datetime="2019-07-12T09:06:48+08:00">2019-07-12</time>
             
 
             
@@ -913,7 +986,27 @@
       
         
           
-            
+            <h3 id="vue双向绑定原理"><a href="#vue双向绑定原理" class="headerlink" title="vue双向绑定原理"></a>vue双向绑定原理</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"txt"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"show-txt"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> obj = &#123;&#125;</span></span><br><span class="line"><span class="javascript"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'txt'</span>, &#123;</span></span><br><span class="line"><span class="javascript"><span class="keyword">get</span>: function () &#123;</span></span><br><span class="line"><span class="javascript"><span class="keyword">return</span> obj</span></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">set</span>: function (newValue) &#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.getElementById(<span class="string">'txt'</span>).value = newValue</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.getElementById(<span class="string">'show-txt'</span>).innerHTML = newValue</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line">obj.txt = e.target.value</span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(e)</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Object.defineProperty</code>是ES5新增的一个API，其作用是给对象的属性增加更多的控制</li>
+<li>Object.defineProperty(obj, prop, descriptor)</li>
+<li>参数 <code>obj</code>: 需要定义属性的对象（目标对象）</li>
+<li><code>prop</code>: 需被定义或修改的属性名（对象上的属性或者方法）</li>
+<li>对于<code>setter</code>和<code>getter</code>，我的理解是它们是一对勾子（hook）函数，当你对一个对象的某个属性赋值时，则会自动调用相应的setert函数；而当获取属性时，则调用getter函数。这也是实现双向数据绑定的关键。</li>
+</ul>
+<p><strong>当修改或者定义对象的某个属性的时候；给这个属性添加一些特性</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'xiangha'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 对象已有的属性添加特性描述</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'name'</span>,&#123;</span><br><span class="line">   configurable:<span class="literal">true</span> | <span class="literal">false</span>, <span class="comment">// 如果是false则不可以删除</span></span><br><span class="line">   enumerable:<span class="literal">true</span> | <span class="literal">false</span>, <span class="comment">// 如果为false则在枚举时候会忽略</span></span><br><span class="line">   value:<span class="string">'任意类型的值,默认undefined'</span></span><br><span class="line">   writable:<span class="literal">true</span> | <span class="literal">false</span> <span class="comment">// 如果为false则不可采用数据运算符进行赋值</span></span><br><span class="line">&#125;);</span><br><span class="line">但是存在一个交叉；如果wrirable为<span class="literal">true</span>；而configurable为<span class="literal">false</span>的时候；所以需要枚举处理enumerable为<span class="literal">false</span></span><br><span class="line">--- 我是一个writable栗子 ---</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'val'</span>,&#123;</span><br><span class="line">    value:<span class="string">'xiangha'</span>,</span><br><span class="line">    writable:<span class="literal">false</span>, <span class="comment">// false</span></span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line">obj.val = <span class="string">'书记'</span>; <span class="comment">// 这个时候是更改不了a的</span></span><br><span class="line">--- 我是一个configurable栗子 ---</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'val'</span>,&#123;</span><br><span class="line">    value:<span class="string">'xiangha'</span>,</span><br><span class="line">    writable:<span class="literal">true</span>, <span class="comment">// true</span></span><br><span class="line">    enumerable:<span class="literal">true</span>,</span><br><span class="line">    configurable:<span class="literal">false</span>  <span class="comment">// false</span></span><br><span class="line">&#125;);</span><br><span class="line">obj.val = <span class="string">'书记'</span>; <span class="comment">// 这个时候是val发生了改变</span></span><br><span class="line"><span class="keyword">delete</span> obj.val 会返回<span class="literal">false</span>；并且val没有删除</span><br><span class="line">--- 我是一个enumerable栗子 --- </span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'val'</span>,&#123;</span><br><span class="line">    value:<span class="string">'xiangha'</span>,</span><br><span class="line">    writable:<span class="literal">true</span>,</span><br><span class="line">    enumerable:<span class="literal">false</span>, <span class="comment">// false</span></span><br><span class="line">    configurable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj[i]) <span class="comment">// 没有具体值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>value：设置属性的值</li>
+<li>writable [‘raɪtəbl] ：值是否可以重写</li>
+<li>enumerable [ɪ’nju:mərəbəl]：目标属性是否可以被枚举</li>
+<li>configurable [kən’fɪgərəbl]：目标属性是否可以被删除是否可以再次修改特性</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">'name'</span>,&#123;</span><br><span class="line">    <span class="keyword">get</span>:function()&#123;&#125; | <span class="literal">undefined</span>,</span><br><span class="line">    <span class="keyword">set</span>:function()&#123;&#125; | <span class="literal">undefined</span>,</span><br><span class="line">    configuracble:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line">注意：当前使用了setter和getter方法；不允许使用writable和value两个属性</span><br></pre></td></tr></table></figure>
+
+
           
         
       
@@ -969,7 +1062,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Html/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Vue的slot使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -989,7 +1082,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/12/Html/" class="post-title-link" itemprop="url">Html</a>
+                <a href="/2019/07/12/Vue的slot使用/" class="post-title-link" itemprop="url">Vue的slot使用</a>
               
             
           </h1>
@@ -1014,145 +1107,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 09:25:51" itemprop="dateCreated datePublished" datetime="2019-06-12T09:25:51+08:00">2019-06-12</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="周大大">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/12/Vue/" class="post-title-link" itemprop="url">Vue</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-12 09:22:32 / 修改时间：09:24:10" itemprop="dateCreated datePublished" datetime="2019-06-12T09:22:32+08:00">2019-06-12</time>
+              <time title="创建时间：2019-07-12 09:06:25 / 修改时间：09:25:00" itemprop="dateCreated datePublished" datetime="2019-07-12T09:06:25+08:00">2019-07-12</time>
             
 
             
@@ -1211,7 +1166,13 @@
       
         
           
-            
+            <h2 id="Vue的slot使用"><a href="#Vue的slot使用" class="headerlink" title="Vue的slot使用"></a>Vue的slot使用</h2><ol>
+<li><strong>父组件传递了todos数组给子组件</strong></li>
+<li><strong>子组件通过props接受了数组数据，这里应该没有任何问题</strong></li>
+<li><strong>子组件拿到数组后v-for渲染列表，并且通过 <slot :todo="todo">的方式，把数组内的每一个todo对象，传递给父组件</slot></strong></li>
+<li><strong>父组件通过slot-scope=”slotProps”的方式，接受todo对象，之后就可以通过slotProps.todo.xxx的方式来使用了</strong></li>
+</ol>
+
           
         
       
@@ -1267,7 +1228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/Javascript/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Vue-$set的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1287,7 +1248,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/11/Javascript/" class="post-title-link" itemprop="url">Javascript</a>
+                <a href="/2019/07/12/Vue-$set的使用/" class="post-title-link" itemprop="url">未命名</a>
               
             
           </h1>
@@ -1312,24 +1273,165 @@
                 
               
 
-              <time title="创建时间：2019-06-11 17:18:46" itemprop="dateCreated datePublished" datetime="2019-06-11T17:18:46+08:00">2019-06-11</time>
+              <time title="创建时间：2019-07-12 09:06:09 / 修改时间：13:04:26" itemprop="dateCreated datePublished" datetime="2019-07-12T09:06:09+08:00">2019-07-12</time>
             
 
             
               
 
               
-                
-                <span class="post-meta-divider">|</span>
-                
+            
+          </span>
 
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: Vue 的使用<br>date: 2019-07-12 09:06:09<br>tags: Vue<br>categories: Web</p>
+<h3 id="Vue-set的使用"><a href="#Vue-set的使用" class="headerlink" title="Vue $set的使用"></a>Vue $set的使用</h3><p>对于已经创建的实例，<strong>Vue</strong> 不允许动态添加根级别的响应式属性。但是，可以使用 <code>Vue.set(object, propertyName, value)</code> 方法向嵌套对象添加响应式属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单个属性</span></span><br><span class="line">Vue.set(vm.someObject, <span class="string">'b'</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">//多个属性</span></span><br><span class="line">vm.userProfile = <span class="built_in">Object</span>.assign(&#123;&#125;, vm.userProfile, &#123;</span><br><span class="line">  age: <span class="number">27</span>,</span><br><span class="line">  favoriteColor: <span class="string">'Vue Green'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>使用没有在初始化实例前声明的数据，Vue 将警告你渲染函数正在试图访问不存在的属性</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-10_16-13-07.png" alt></p>
+<p>所以有时你需要渲染在data中新添加的数据，会出现报错</p>
+<p>也可以利用 v-if 的特性来渲染新的数据，在v-if为true之前添加，哪么就可以使数据渲染出来</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-10_16-14-11.png" alt></p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-10_16-14-35.png" alt></p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-10_16-20-11.png" alt></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Passive-event-listeners-three-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-12 09:23:49" itemprop="dateModified" datetime="2019-06-12T09:23:49+08:00">2019-06-12</time>
+                <a href="/2019/07/12/Passive-event-listeners-three-js/" class="post-title-link" itemprop="url">Passive event listeners -- three.js</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:05:53 / 修改时间：13:02:39" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:53+08:00">2019-07-12</time>
+            
+
+            
+              
+
               
             
           </span>
@@ -1383,7 +1485,738 @@
       
         
           
-            <h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1>
+            <h3 id="Passive-event-listeners-–-three-js"><a href="#Passive-event-listeners-–-three-js" class="headerlink" title="Passive event listeners – three.js"></a>Passive event listeners – three.js</h3><p>在使用<code>onwheel</code>事件的时候控制台报错，并且抛出：<em>Unable to preventDefault inside passive event listener invocation</em></p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-08_09-45-07.png" alt></p>
+<p>解决办法：</p>
+<p>在three源文件中找到wheel事件</p>
+<p> 修改前</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-08_09-47-15.png" alt></p>
+<p> 修改后</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-08_09-48-09.png" alt></p>
+<p>passive：设置为<code>true</code>时，表示 <code>listener</code> 永远不会调用 <code>preventDefault()。如果 listener 仍然调用了这个函数，客户端将会忽略它并抛出一个控制台警告。</code></p>
+<p>从Chrome 56开始，如果我们给<code>document</code>绑定<code>touchmove</code>或者<code>touchstart</code>事件的监听器，这个<code>passive</code>是会被默认设置为<code>true</code>以提高性能，具体<a href="https://link.juejin.im?target=https%3A%2F%2Fwww.chromestatus.com%2Ffeature%2F5093566007214080" target="_blank" rel="noopener">chromestatue 文档</a>。但是我们大多数人并不知道这点，并且依旧调用了<code>preventDefault</code>。这并不会导致什么页面崩溃级的错误，但是这可能导致我们忽略了一个页面性能优化的点，特别是在移动端这种更加重视性能优化的场景下。</p>
+<p>参考链接：<a href="https://juejin.im/post/5ad804c1f265da504547fe68" target="_blank" rel="noopener">https://juejin.im/post/5ad804c1f265da504547fe68</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/js引入静态资源报跨域错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/js引入静态资源报跨域错误/" class="post-title-link" itemprop="url">js引入静态资源报跨域错误</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:05:23 / 修改时间：13:01:19" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:23+08:00">2019-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="js引入静态资源报跨域错误"><a href="#js引入静态资源报跨域错误" class="headerlink" title="js引入静态资源报跨域错误"></a>js引入静态资源报跨域错误</h3><p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-27.png" alt></p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-37-44.png" alt></p>
+<p>加载js文件时使用了file协议，该协议会导致跨域，而使用htpp、https等协议时则没有跨域问题。</p>
+<p><img src="C:%5CBlog%5Csource_posts%5Cimg%5CSnipaste_2019-07-11_09-39-26.png" alt></p>
+<p>在<code>import</code>的过程中<strong>需要http服务器去解析es6语法并添加header头信息去跨域引入TrackballControls.js</strong>，但是file协议相当于通过资源管理器静态访问demo.html，<strong>中间的过程没有http服务器参与解析，所以无法识别es6的import语法</strong>。</p>
+<p>当然，也可以搭建lo本地服务器，这样也是可以的</p>
+<p>完整代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> * <span class="keyword">as</span> THREE <span class="keyword">from</span> <span class="string">'https://threejs.org/build/three.module.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Stats <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/libs/stats.module.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; TrackballControls &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/controls/TrackballControls.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; DragControls &#125; <span class="keyword">from</span> <span class="string">'https://threejs.org/examples/jsm/controls/DragControls.js'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> container, stats;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> camera, controls, scene, renderer;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> objects = [];</span></span><br><span class="line"></span><br><span class="line">    init();</span><br><span class="line">    animate();</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        container = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.body.appendChild(container);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        camera = <span class="keyword">new</span> THREE.PerspectiveCamera(<span class="number">70</span>, <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight, <span class="number">1</span>, <span class="number">5000</span>);</span></span><br><span class="line">        camera.position.z = 1000;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        scene = <span class="keyword">new</span> THREE.Scene();</span></span><br><span class="line"><span class="javascript">        scene.background = <span class="keyword">new</span> THREE.Color(<span class="number">0xf0f0f0</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        scene.add(<span class="keyword">new</span> THREE.AmbientLight(<span class="number">0x505050</span>));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> light = <span class="keyword">new</span> THREE.SpotLight(<span class="number">0xffffff</span>, <span class="number">1.5</span>);</span></span><br><span class="line">        light.position.set(0, 500, 2000);</span><br><span class="line"><span class="javascript">        light.angle = <span class="built_in">Math</span>.PI / <span class="number">9</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        light.castShadow = <span class="literal">true</span>;</span></span><br><span class="line">        light.shadow.camera.near = 1000;</span><br><span class="line">        light.shadow.camera.far = 4000;</span><br><span class="line">        light.shadow.mapSize.width = 1024;</span><br><span class="line">        light.shadow.mapSize.height = 1024;</span><br><span class="line"></span><br><span class="line">        scene.add(light);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxBufferGeometry(<span class="number">40</span>, <span class="number">40</span>, <span class="number">40</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++) &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> object = <span class="keyword">new</span> THREE.Mesh(geometry, <span class="keyword">new</span> THREE.MeshLambertMaterial(&#123; <span class="attr">color</span>: <span class="built_in">Math</span>.random() * <span class="number">0xffffff</span> &#125;));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.position.x = <span class="built_in">Math</span>.random() * <span class="number">1000</span> - <span class="number">500</span>;</span></span><br><span class="line"><span class="javascript">            object.position.y = <span class="built_in">Math</span>.random() * <span class="number">600</span> - <span class="number">300</span>;</span></span><br><span class="line"><span class="javascript">            object.position.z = <span class="built_in">Math</span>.random() * <span class="number">800</span> - <span class="number">400</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.rotation.x = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"><span class="javascript">            object.rotation.y = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"><span class="javascript">            object.rotation.z = <span class="built_in">Math</span>.random() * <span class="number">2</span> * <span class="built_in">Math</span>.PI;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.scale.x = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">            object.scale.y = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">            object.scale.z = <span class="built_in">Math</span>.random() * <span class="number">2</span> + <span class="number">1</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            object.castShadow = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">            object.receiveShadow = <span class="literal">true</span>;</span></span><br><span class="line"></span><br><span class="line">            scene.add(object);</span><br><span class="line"></span><br><span class="line">            objects.push(object);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer = <span class="keyword">new</span> THREE.WebGLRenderer(&#123; <span class="attr">antialias</span>: <span class="literal">true</span> &#125;);</span></span><br><span class="line"><span class="javascript">        renderer.setPixelRatio(<span class="built_in">window</span>.devicePixelRatio);</span></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer.shadowMap.enabled = <span class="literal">true</span>;</span></span><br><span class="line">        renderer.shadowMap.type = THREE.PCFShadowMap;</span><br><span class="line"></span><br><span class="line">        container.appendChild(renderer.domElement);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        controls = <span class="keyword">new</span> TrackballControls(camera, renderer.domElement);</span></span><br><span class="line">        controls.rotateSpeed = 1.0;</span><br><span class="line">        controls.zoomSpeed = 1.2;</span><br><span class="line">        controls.panSpeed = 0.8;</span><br><span class="line"><span class="javascript">        controls.noZoom = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">        controls.noPan = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">        controls.staticMoving = <span class="literal">true</span>;</span></span><br><span class="line">        controls.dynamicDampingFactor = 0.3;</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> dragControls = <span class="keyword">new</span> DragControls(objects, camera, renderer.domElement);</span></span><br><span class="line"><span class="javascript">        dragControls.addEventListener(<span class="string">'dragstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            controls.enabled = <span class="literal">false</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"><span class="javascript">        dragControls.addEventListener(<span class="string">'dragend'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            controls.enabled = <span class="literal">true</span>;</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        stats = <span class="keyword">new</span> Stats();</span></span><br><span class="line">        container.appendChild(stats.dom);</span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, onWindowResize, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">onWindowResize</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        camera.aspect = <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight;</span></span><br><span class="line">        camera.updateProjectionMatrix();</span><br><span class="line"></span><br><span class="line"><span class="javascript">        renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight);</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line">        requestAnimationFrame(animate);</span><br><span class="line"></span><br><span class="line">        render();</span><br><span class="line">        stats.update();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"></span><br><span class="line">        controls.update();</span><br><span class="line"></span><br><span class="line">        renderer.render(scene, camera);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>知识点：</strong></p>
+<ul>
+<li>file协议只能在本地访问</li>
+<li>本地搭建http服务器开放端口后他人也可以通过http访问到你电脑中的文件，但是file协议做不到</li>
+<li>file协议对应有一个类似http的远程访问，就是ftp协议，即文件传输协议。</li>
+<li>file协议无法实现跨域</li>
+</ul>
+<p><strong>flie协议：file协议主要用于访问本地计算机中的文件</strong></p>
+<p>file协议的基本格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file:///文件路径</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Axios-封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/Axios-封装/" class="post-title-link" itemprop="url">Axios 封装</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:05:01 / 修改时间：09:21:23" itemprop="dateCreated datePublished" datetime="2019-07-12T09:05:01+08:00">2019-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Axios-封装"><a href="#Axios-封装" class="headerlink" title="Axios 封装"></a>Axios 封装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Axios.defaults.baseURL = <span class="string">'请求的域名'</span>;</span><br><span class="line"><span class="comment">//其他地方请求地址可以省略域名 </span></span><br><span class="line">Axios.defaults.headers.common[<span class="string">'Authorization'</span>] = AUTH_TOKEN;</span><br><span class="line"><span class="comment">//第三方认证涉及到token 如果没有可以干掉</span></span><br><span class="line">Axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded'</span>;</span><br><span class="line"><span class="comment">//全局设置post请求的数据编码格式</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>安装Axios</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>/src/http/目录下建立一个htttp.js(没有http文件夹就新建一个，其他文件夹也是可以)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>  </span><br><span class="line"><span class="keyword">import</span> &#123; Message &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;  <span class="comment">//element库的消息提示，可以不用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建axios实例</span></span><br><span class="line"><span class="comment">//在遇到请求多个接口，且content-type不一样则可以创建多个axios实例</span></span><br><span class="line"><span class="keyword">var</span> service = axios.create(&#123;</span><br><span class="line">    baseURL: <span class="string">'https://www.xx.com/v1/'</span>, </span><br><span class="line">    timeout: <span class="number">5000</span>, </span><br><span class="line">        headers: &#123;</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">'application/json'</span>,</span><br><span class="line">        <span class="string">"token"</span>:<span class="string">'14a1347f412b319b0fef270489f'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;) </span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">//get请求，其他类型请求复制粘贴，修改method</span></span><br><span class="line">    <span class="keyword">get</span>(url, param) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">cback, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            service(&#123;</span><br><span class="line">                method: <span class="string">'get'</span>,</span><br><span class="line">                url,</span><br><span class="line">                params: param,</span><br><span class="line">            &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123; </span><br><span class="line">                              <span class="comment">//axios返回的是一个promise对象 </span></span><br><span class="line">                <span class="keyword">var</span> res_code = res.status.toString();</span><br><span class="line">                <span class="keyword">if</span> (res_code.charAt(<span class="number">0</span>) == <span class="number">2</span>) &#123;</span><br><span class="line">                    cback(res);   <span class="comment">//cback在promise执行器内部</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(res, <span class="string">'异常1'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!err.response) &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">'请求错误'</span>)</span><br><span class="line">                                        <span class="comment">//Message是element库的组件，可以去掉</span></span><br><span class="line">                    Message(&#123;</span><br><span class="line">                        showClose: <span class="literal">true</span>,</span><br><span class="line">                        message: <span class="string">'请求错误'</span>,</span><br><span class="line">                        type: <span class="string">'error'</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    reject(err.response); </span><br><span class="line">                    <span class="built_in">console</span>.log(err.response, <span class="string">'异常2'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式二</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br><span class="line"></span><br><span class="line">axios.defaults.timeout = ;</span><br><span class="line">axios.defaults.baseURL =<span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//http request 拦截器</span></span><br><span class="line">axios.interceptors.request.use(</span><br><span class="line">  config =&gt; &#123;</span><br><span class="line">    <span class="comment">// const token = getCookie('名称');</span></span><br><span class="line">    config.data = <span class="built_in">JSON</span>.stringify(config.data);</span><br><span class="line">    config.headers = &#123;</span><br><span class="line">      <span class="string">'Content-Type'</span>:<span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// if(token)&#123;</span></span><br><span class="line">    <span class="comment">//   config.params = &#123;'token':token&#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">  &#125;,</span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//http response 拦截器</span></span><br><span class="line">axios.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(response.data.errCode ==<span class="number">2</span>)&#123;</span><br><span class="line">      router.push(&#123;</span><br><span class="line">        path:<span class="string">"/login"</span>,</span><br><span class="line">        querry:&#123;<span class="attr">redirect</span>:router.currentRoute.fullPath&#125;<span class="comment">//从哪个页面跳转</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;,</span><br><span class="line">  error =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 封装get方法</span></span><br><span class="line"><span class="comment"> * @param url</span></span><br><span class="line"><span class="comment"> * @param data</span></span><br><span class="line"><span class="comment"> * @returns &#123;Promise&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">fetch</span>(<span class="params">url,params=&#123;&#125;</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    axios.get(url,&#123;</span><br><span class="line">      params:params</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(response.data);</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">      reject(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 封装post请求</span></span><br><span class="line"><span class="comment"> * @param url</span></span><br><span class="line"><span class="comment"> * @param data</span></span><br><span class="line"><span class="comment"> * @returns &#123;Promise&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params">url,data = &#123;&#125;</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">     axios.post(url,data)</span><br><span class="line">          .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">            resolve(response.data);</span><br><span class="line">          &#125;,err =&gt; &#123;</span><br><span class="line">            reject(err)</span><br><span class="line">          &#125;)</span><br><span class="line">   &#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在main.js中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这里是vue的主js入口文件 </span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span> </span><br><span class="line"><span class="keyword">import</span> http <span class="keyword">from</span> <span class="string">'./http.js'</span>   <span class="comment">//axios实例化后引入取名http</span></span><br><span class="line"> </span><br><span class="line">Vue.prototype.http = http   <span class="comment">//放入全局</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">new</span> Vue(&#123; </span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式二</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;post,<span class="keyword">get</span>&#125; from './utils/http'</span><br><span class="line">//定义全局变量</span><br><span class="line">Vue.prototype.$post=post;</span><br><span class="line">Vue.prototype.$<span class="keyword">get</span>=<span class="keyword">get</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在组件里引用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式一</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//生命周期函数</span></span><br><span class="line"> mounted ()&#123;      </span><br><span class="line">    <span class="keyword">this</span>.http.get(<span class="string">'banner/1'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res.data)</span><br><span class="line">    &#125;) </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式二</span></span><br><span class="line"></span><br><span class="line">mounted()&#123;</span><br><span class="line">    <span class="keyword">this</span>.$post(<span class="string">'/api/v2/movie/top250'</span>)</span><br><span class="line">      .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(response)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/Ant Design of Vue自定义svg图标/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/Ant Design of Vue自定义svg图标/" class="post-title-link" itemprop="url">Antd封装Svg图标组件</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:04:34 / 修改时间：09:20:37" itemprop="dateCreated datePublished" datetime="2019-07-12T09:04:34+08:00">2019-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Ant-Design-of-Vue自定义svg图标"><a href="#Ant-Design-of-Vue自定义svg图标" class="headerlink" title="Ant Design of Vue自定义svg图标"></a>Ant Design of Vue自定义svg图标</h2><p>官网中说明需要安装<em>vue-svg-loade</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i -D vue-svg-loader</span><br><span class="line"></span><br><span class="line">yarn add --dev vue-svg-loader</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue-config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  chainWebpack: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> svgRule = config.module.rule(<span class="string">'svg'</span>);</span><br><span class="line"></span><br><span class="line">    svgRule.uses.clear();</span><br><span class="line"></span><br><span class="line">    svgRule</span><br><span class="line">      .use(<span class="string">'vue-svg-loader'</span>)</span><br><span class="line">      .loader(<span class="string">'vue-svg-loader'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>接下来新建一个组件SvgIcon.vue</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;a-icon :component=<span class="string">"this.svg"</span> :style=<span class="string">"&#123;fontSize:'40px',lineHeight:'65px',marginLeft:'-10px'&#125;"</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  props: ["svg"],</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  name: "client"</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to limit CSS to <span class="keyword">this</span> component only --&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped lang=<span class="string">"scss"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在需要调用的组件中引入svg格式的图标和SvgIcon.vue组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> svgIcon <span class="keyword">from</span> <span class="string">"./svg/SvgIcon"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> client <span class="keyword">from</span> <span class="string">"../assets/sl/kehuguanli.svg"</span>;</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">components: &#123;</span><br><span class="line">    svgIcon</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><strong>并且在组建内使用</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg-icon :svg=<span class="string">"this.svg"</span>&gt;&lt;/svg-icon&gt;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/SSR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="周大大">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/SSR/" class="post-title-link" itemprop="url">SSR</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 09:00:52 / 修改时间：09:02:42" itemprop="dateCreated datePublished" datetime="2019-07-12T09:00:52+08:00">2019-07-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-1、什么是SSR"><a href="#1-1、什么是SSR" class="headerlink" title="1.1、什么是SSR"></a>1.1、什么是SSR</h3><p>　　SSR（服务端渲染）顾名思义就是将页面在服务端渲染完成后在客户端直接展示。</p>
+<h3 id="1-2、客户端渲染与服务端渲染的区别"><a href="#1-2、客户端渲染与服务端渲染的区别" class="headerlink" title="1.2、客户端渲染与服务端渲染的区别"></a>1.2、客户端渲染与服务端渲染的区别</h3><h4 id="传统的SPA模式"><a href="#传统的SPA模式" class="headerlink" title="传统的SPA模式"></a>传统的SPA模式</h4><p>　　即客户端渲染的模式</p>
+<ol>
+<li>Vue.js构建的应用程序，默认情况下是有一个html模板页，然后通过webpack打包生成一堆js、css等等资源文件。然后塞到index.html中</li>
+<li>用户输入url访问页面 -&gt; 先得到一个html模板页 -&gt; 然后通过异步请求服务端数据 -&gt; 得到服务端的数据 -&gt; 渲染成局部页面 -&gt; 用户</li>
+</ol>
+<h4 id="SSR模式"><a href="#SSR模式" class="headerlink" title="SSR模式"></a>SSR模式</h4><p>　　即服务端渲染模式</p>
+<ol>
+<li>用户输入url访问页面 -&gt; 服务端接收到请求 -&gt; 将对应请求的数据渲染完一个网页 -&gt; 返回给用户</li>
+</ol>
+<h3 id="1-3、为什么要使用SSR呢？"><a href="#1-3、为什么要使用SSR呢？" class="headerlink" title="1.3、为什么要使用SSR呢？"></a>1.3、为什么要使用SSR呢？</h3><p>　　ssr的好处官网已经给出，最有意思的两个优点如下：</p>
+<ol>
+<li>更有好的SEO。由于搜索引擎爬虫抓取工具可以直接查看完全渲染的页面。</li>
+<li>更快的内容到达时间(time-to-content)</li>
+</ol>
+<h3 id="1-4、SSR原理"><a href="#1-4、SSR原理" class="headerlink" title="1.4、SSR原理"></a>1.4、SSR原理</h3><p>　　这是vue.js官方的SSR原理介绍图，从这张图片，我们可以知道：我们需要通过Webpack打包生成两份bundle文件：</p>
+<ul>
+<li>Client Bundle，给浏览器用。和纯Vue前端项目Bundle类似</li>
+<li>Server Bundle，供服务端SSR使用，一个json文件</li>
+</ul>
+<p>　　不管你项目先前是什么样子，是否是使用vue-cli生成的。都会有这个构建改造过程。在构建改造这里会用到 vue-server-renderer 库，这里要注意的是 vue-server-renderer 版本要与Vue版本一样。</p>
+
           
         
       
@@ -1427,6 +2260,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1468,7 +2305,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1487,9 +2324,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
