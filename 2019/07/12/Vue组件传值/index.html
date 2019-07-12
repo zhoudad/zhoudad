@@ -88,18 +88,18 @@
 
 
 
-  <meta name="description" content="Vue组件传值 父传子    =========================父组件================================                  父组件:                                                            import child from &apos;./child&apos;      export def">
+  <meta name="description" content="Vue组件传值 父传子 1234567891011121314151617181920212223&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    父组件:    &amp;lt;input type=&quot;text&quot; v-model=&quot;name&quot;&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;!-- 引入子组件 --&amp;gt;    &amp;lt;child :inp">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue组件传值">
 <meta property="og:url" content="http://yoursite.com/2019/07/12/Vue组件传值/index.html">
 <meta property="og:site_name" content="周大大">
-<meta property="og:description" content="Vue组件传值 父传子    =========================父组件================================                  父组件:                                                            import child from &apos;./child&apos;      export def">
+<meta property="og:description" content="Vue组件传值 父传子 1234567891011121314151617181920212223&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    父组件:    &amp;lt;input type=&quot;text&quot; v-model=&quot;name&quot;&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;!-- 引入子组件 --&amp;gt;    &amp;lt;child :inp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T01:26:40.804Z">
+<meta property="og:updated_time" content="2019-07-12T05:27:14.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue组件传值">
-<meta name="twitter:description" content="Vue组件传值 父传子    =========================父组件================================                  父组件:                                                            import child from &apos;./child&apos;      export def">
+<meta name="twitter:description" content="Vue组件传值 父传子 1234567891011121314151617181920212223&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    父组件:    &amp;lt;input type=&quot;text&quot; v-model=&quot;name&quot;&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;br&amp;gt;    &amp;lt;!-- 引入子组件 --&amp;gt;    &amp;lt;child :inp">
 
 
 
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 09:07:50 / 修改时间：09:26:40" itemprop="dateCreated datePublished" datetime="2019-07-12T09:07:50+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 09:07:50 / 修改时间：13:27:14" itemprop="dateCreated datePublished" datetime="2019-07-12T09:07:50+08:00">2019-07-12</time>
             
 
             
@@ -433,229 +433,53 @@
       
 
       
-        <h2 id="Vue组件传值"><a href="#Vue组件传值" class="headerlink" title="Vue组件传值"></a>Vue组件传值</h2><p> <strong>父传子</strong></p>
-<p>   =========================父组件================================</p>
-   <template>
-     <div>
-       父组件:
-       <input type="text" v-model="name">
-       <br>
-       <br>
-       <!-- 引入子组件 -->
-       <child :inputname="name"></child>
-     </div>
-   </template>
-   <script>
-     import child from './child'
-     export default {
-       components: {
-         child
-       },
-       data () {
-         return {
-           name: ''
-         }
-       }
-     }
-   </script>
+        <h2 id="Vue组件传值"><a href="#Vue组件传值" class="headerlink" title="Vue组件传值"></a>Vue组件传值</h2><ul>
+<li><p><strong>父传子</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    父组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入子组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">:inputName</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  import child from './child'</span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      child</span><br><span class="line">    &#125;,</span><br><span class="line">    data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        name: ''</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>   =========================子组件================================</p>
-   <template>
-     <div>
-       子组件:
-       <span></span>
-     </div>
-   </template>
-   <script>
-     export default {
-       // 接受父组件的值
-       props: {
-         inputName: String,
-         required: true
-       }
-     }
-   </script>
----------------------
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      子组件:</span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;inputName&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    export default &#123;</span><br><span class="line">      // 接受父组件的值</span><br><span class="line">      props: &#123;</span><br><span class="line">        inputName: String,</span><br><span class="line">        required: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p> <strong>子传父</strong></p>
-<p>   =========================子组件================================</p>
- <template>
-     <div>
-       子组件:
-       <span></span>
-       <!-- 定义一个子组件传值的方法，点击触发 -->
-       <input type="button" value="点击触发" @click="childClick">
-     </div>
-   </template>
-   <script>
-     export default {
-       data () {
-         return {
-           childValue: '我是子组件的数据'
-         }
-       },
-       methods: {
-         childClick () {
-           // childByValue是在父组件on监听的方法
-           // 第二个参数this.childValue是需要传的值
-           this.$emit('childByValue', this.childValue)
-         }
-       }
-     }
-   </script>
 
-<p>=========================父组件================================</p>
-<template>
-  <div>
-    父组件:
-    <span></span>
-    <br>
-    <br>
-    <!-- 引入子组件 定义一个on的方法监听子组件的状态-->
-    <child v-on:childbyvalue="childByValue"></child>
-  </div>
-</template>
-<script>
-  import child from './child'
-  export default {
-    components: {
-      child
-    },
-    data () {
-      return {
-        name: ''
-      }
-    },
-    methods: {
-      childByValue: function (childValue) {
-        // childValue就是子组件传过来的值
-        this.name = childValue
-      }
-    }
-  }
-</script>
----------------------
-**非父子**
 
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>子传父</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">       子组件:</span><br><span class="line">       <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;childValue&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 定义一个子组件传值的方法，点击触发 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击触发"</span> @<span class="attr">click</span>=<span class="string">"childClick"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">     export default &#123;</span><br><span class="line">       data () &#123;</span><br><span class="line">         return &#123;</span><br><span class="line">           childValue: '我是子组件的数据'</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;,</span><br><span class="line">       methods: &#123;</span><br><span class="line">         childClick () &#123;</span><br><span class="line">           // childByValue是在父组件on监听的方法</span><br><span class="line">           // 第二个参数this.childValue是需要传的值</span><br><span class="line">           this.$emit('childByValue', this.childValue)</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    父组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入子组件 定义一个on的方法监听子组件的状态--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">child</span> <span class="attr">v-on:childByValue</span>=<span class="string">"childByValue"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  import child from './child'</span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      child</span><br><span class="line">    &#125;,</span><br><span class="line">    data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        name: ''</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      childByValue: function (childValue) &#123;</span><br><span class="line">        // childValue就是子组件传过来的值</span><br><span class="line">        this.name = childValue</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>非父子</strong></p>
 <p>新建一个bus.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
 
 <p>组件A</p>
-<template>
-  <div>
-    A组件:
-    <span></span>
-    <input type="button" value="点击触发" @click="elementByValue">
-  </div>
-</template>
-<script>
-  // 引入公共的bug，来做为中间传达的工具
-  import Bus from './bus.js'
-  export default {
-    data () {
-      return {
-        elementValue: 4
-      }
-    },
-    methods: {
-      elementByValue: function () {
-        Bus.$emit('val', this.elementValue)
-      }
-    }
-  }
-</script>
----------------------
-组件B
-
-<template>
-  <div>
-    B组件:
-    <input type="button" value="点击触发" @click="getData">
-    <span></span>
-  </div>
-</template>
-<script>
-  import Bus from './bus.js'
-  export default {
-    data () {
-      return {
-        name: 0
-      }
-    },
-    mounted: function () {
-      var vm = this
-      // 用$on事件来接收参数
-      Bus.$on('val', (data) => {
-        console.log(data)
-        vm.name = data
-      })
-    },
-    methods: {
-      getData: function () {
-        this.name++
-      }
-    }
-  }
-</script>
----------------------
-也可以通过main.js的另一种方法
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Bus = <span class="keyword">new</span> Vue</span><br><span class="line"></span><br><span class="line">Vue.prototype.bus = Bus</span><br></pre></td></tr></table></figure>
-
-<p>组件A</p>
-<template>
-  <div>
-    A组件:
-    <span></span>
-    <input type="button" value="点击触发" @click="elementByValue">
-  </div>
-</template>
-<script>
-  export default {
-    data () {
-      return {
-        elementValue: 4
-      }
-    },
-    methods: {
-      elementByValue: function () {
-        this.bus.$emit('val', this.elementValue)
-      }
-    }
-  }
-</script>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    A组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;elementValue&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击触发"</span> @<span class="attr">click</span>=<span class="string">"elementByValue"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 引入公共的bug，来做为中间传达的工具</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Bus <span class="keyword">from</span> <span class="string">'./bus.js'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line">        elementValue: 4</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="javascript">      elementByValue: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        Bus.$emit(<span class="string">'val'</span>, <span class="keyword">this</span>.elementValue)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>组件B</p>
-<template>
-  <div>
-    B组件:
-    <input type="button" value="点击触发" @click="getData">
-    <span></span>
-  </div>
-</template>
-<script>
-  export default {
-    data () {
-      return {
-        name: 0
-      }
-    },
-    mounted: function () {
-      var vm = this
-      // 用$on事件来接收参数
-      this.bus.$on('val', (data) => {
-        console.log(data)
-        vm.name = data
-      })
-    },
-    methods: {
-      getData: function () {
-        this.name++
-      }
-    }
-  }
-</script>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    B组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击触发"</span> @<span class="attr">click</span>=<span class="string">"getData"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Bus <span class="keyword">from</span> <span class="string">'./bus.js'</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line">        name: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    mounted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">this</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// 用$on事件来接收参数</span></span></span><br><span class="line"><span class="javascript">      Bus.$on(<span class="string">'val'</span>, (data) =&gt; &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(data)</span></span><br><span class="line">        vm.name = data</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="javascript">      getData: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.name++</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p>也可以通过main.js的另一种方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Bus = <span class="keyword">new</span> Vue</span><br><span class="line"></span><br><span class="line">Vue.prototype.bus = Bus</span><br></pre></td></tr></table></figure>
+
+<p>组件A</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    A组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;elementValue&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击触发"</span> @<span class="attr">click</span>=<span class="string">"elementByValue"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line">        elementValue: 4</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="javascript">      elementByValue: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.bus.$emit(<span class="string">'val'</span>, <span class="keyword">this</span>.elementValue)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>组件B</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    B组件:</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击触发"</span> @<span class="attr">click</span>=<span class="string">"getData"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    data () &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line">        name: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="javascript">    mounted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> vm = <span class="keyword">this</span></span></span><br><span class="line"><span class="javascript">      <span class="comment">// 用$on事件来接收参数</span></span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.bus.$on(<span class="string">'val'</span>, (data) =&gt; &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(data)</span></span><br><span class="line">        vm.name = data</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line"><span class="javascript">      getData: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.name++</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
 
       
     </div>
@@ -778,7 +602,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
